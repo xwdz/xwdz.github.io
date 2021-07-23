@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[]]></title>
-    <url>%2F2020%2F07%2F25%2F%E7%A8%BB%E9%A6%99%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <title><![CDATA[基础网络总结]]></title>
+    <url>%2F2021%2F07%2F23%2F%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[TODO]]></content>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[基础算法总结]]></title>
+    <url>%2F2021%2F07%2F23%2F%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）； 随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。 指数阶O（2n）典型的就是 斐波那契数列了，基本概念就是前面2个数字加起来等于后面一个数；也就(f-1) + (f-2) 递归即可； 递归方法效率非常低 时间复杂度为2n；可以通过cache来缓存结果，不过次方法提升运算效率；时间复杂度并没有改变 1234567891011121314151617181920 public static long test1(int n) &#123; if (n &lt; 2) &#123; return n; &#125; if (n == 2) &#123; return 1; &#125; if (sMap.get(n) != null) &#123; return sMap.get(n); &#125; else &#123; long temp1 = test1(n - 1); long temp2 = test1(n - 2); sMap.put(n, temp1 + temp2); Log.printLog("n " + n + "! " + temp1 + " " + temp2 + " = " + (temp1 + temp2)); return temp1 + temp2; &#125; &#125;// 时间复杂度：O(n) 12345678910111213141516public static long test1(int n) &#123; if (n &lt; 2) &#123; return n; &#125; if (n == 2) &#123; return 1; &#125; int a = 0, b = 1, result = 0; for (int i = 2; i &lt;= n; ++i) &#123; result = a + b; a = b; b = result; &#125; return result; &#125; 线性阶O(n)123for (int i = 0; i &lt; n; i++) &#123; j = i;&#125; for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的; 平方阶O（n2）典型的冒泡排序 核心思想就是左边跟右边比对如果左边比右边大的话则交换位置;代码如下 12345678910for(int i = 0;arr.length - 1;i ++)&#123; for(int j = 0;arr.lenth - 1 -i;j++)&#123; int temp = 0; if(arr[i] &gt; arr[i + 1])&#123; temp = arr[i]; arr[i + 1] = arr[i]; arr[i] = temp &#125; &#125;&#125; 当然上面冒泡排序还有优化空间，比如比较的时候没有发生交换则没必要继续循环下去；可以做个标记跳出循环即可； 对数阶O(logn)12345int i = 1;while(i&lt;n)&#123; i = i * 2;&#125; 上面的代码，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了，直到i不小于n退出。我们试着求解一下，假设循环次数为x，也就是说 2 的 x 次方等于 n，则由2^x=n得出x=log₂n。因此这个代码的时间复杂度为 线性对数阶O(nlogn)线性对数阶，就是将时间复杂度为对数阶的代码循环n遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了，如下， 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i&lt;n) &#123; i = i * 2; &#125;&#125; 除此之外，其实还有平均情况复杂度、最好时间复杂度、最坏时间复杂度。。。一般没有特殊说明的情况下，都是值最坏时间复杂度。]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android-app启动流程]]></title>
+    <url>%2F2021%2F07%2F23%2FAndroid-app%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[TODO]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android-性能优化]]></title>
+    <url>%2F2021%2F07%2F23%2FAndroid-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[性能优化### //TODO### 优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果 （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentService onHandleIntent () 方法来进行初始化一些比较耗时的操作 各种debug环境的log Release环境下及时关闭量变引起质变；]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[我在深圳的最后一天]]></title>
