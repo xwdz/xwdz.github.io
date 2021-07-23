@@ -12,18 +12,18 @@
 <link rel="dns-prefetch" href="http:xwcc.fun">
 <title>Android-性能优化 | 跟我回星城</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="性能优化###  //TODO###  优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果  （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentSer">
+<meta name="description" content="优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果  （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentService onHandleIntent (">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android-性能优化">
 <meta property="og:url" content="http:xwcc.fun/2021/07/23/Android-性能优化/index.html">
 <meta property="og:site_name" content="跟我回星城">
-<meta property="og:description" content="性能优化###  //TODO###  优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果  （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentSer">
+<meta property="og:description" content="优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果  （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentService onHandleIntent (">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2021-07-23T02:51:23.475Z">
+<meta property="og:updated_time" content="2021-07-23T03:00:40.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android-性能优化">
-<meta name="twitter:description" content="性能优化###  //TODO###  优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果  （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentSer">
+<meta name="twitter:description" content="优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果  （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentService onHandleIntent (">
 
 <link rel="alternative" href="/atom.xml" title="跟我回星城" type="application/atom+xml">
 
@@ -184,9 +184,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>### </p>
-<h3 id="TODO"><a href="#TODO" class="headerlink" title="//TODO"></a>//TODO</h3><p>### </p>
-<h3 id="优化方向可以从以下几个方面入手"><a href="#优化方向可以从以下几个方面入手" class="headerlink" title="优化方向可以从以下几个方面入手"></a>优化方向可以从以下几个方面入手</h3><h4 id="（一）启动背景设置"><a href="#（一）启动背景设置" class="headerlink" title="（一）启动背景设置"></a>（一）启动背景设置</h4><ol>
+        <h3 id="优化方向可以从以下几个方面入手"><a href="#优化方向可以从以下几个方面入手" class="headerlink" title="优化方向可以从以下几个方面入手"></a>优化方向可以从以下几个方面入手</h3><h4 id="（一）启动背景设置"><a href="#（一）启动背景设置" class="headerlink" title="（一）启动背景设置"></a>（一）启动背景设置</h4><ol>
 <li>设置 <strong>android:windowlsTranslucent:true</strong> 透明效果</li>
 </ol>
 <h4 id="（二）appliccation-里面初始化对的优化"><a href="#（二）appliccation-里面初始化对的优化" class="headerlink" title="（二）appliccation 里面初始化对的优化"></a>（二）appliccation 里面初始化对的优化</h4><ol>
@@ -195,6 +193,8 @@
 <li>使用 IntentService onHandleIntent () 方法来进行初始化一些比较耗时的操作</li>
 <li>各种debug环境的log Release环境下及时关闭量变引起质变；</li>
 </ol>
+<a id="more"></a>
+<p>//TODO</p>
 
       
 
@@ -462,11 +462,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,11 +486,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">

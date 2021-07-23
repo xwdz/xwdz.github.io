@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[基础网络总结]]></title>
     <url>%2F2021%2F07%2F23%2F%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[TODO]]></content>
+    <content type="text"><![CDATA[//TODO]]></content>
       <tags>
         <tag>网络</tag>
       </tags>
@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[Android-性能优化]]></title>
     <url>%2F2021%2F07%2F23%2FAndroid-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[性能优化### //TODO### 优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果 （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentService onHandleIntent () 方法来进行初始化一些比较耗时的操作 各种debug环境的log Release环境下及时关闭量变引起质变；]]></content>
+    <content type="text"><![CDATA[优化方向可以从以下几个方面入手（一）启动背景设置 设置 android:windowlsTranslucent:true 透明效果 （二）appliccation 里面初始化对的优化 开子线程• 线程中没有创建 Handler、没有操作 UI 、对异步要求不高 懒加载• 用到的时候在初始化，如网络，数据库，图片库，或一些三方库。 使用 IntentService onHandleIntent () 方法来进行初始化一些比较耗时的操作 各种debug环境的log Release环境下及时关闭量变引起质变； //TODO]]></content>
       <tags>
         <tag>Android</tag>
       </tags>

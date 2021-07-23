@@ -177,7 +177,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3>
+        <p>//TODO</p>
+
       
 
       
@@ -262,23 +263,9 @@
 </ol>
 <p>随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低；</p>
 <p>^ 如果是同值取0、异值取1。</p>
-<h3 id="指数阶O（2n）"><a href="#指数阶O（2n）" class="headerlink" title="指数阶O（2n）"></a>指数阶O（2n）</h3><p>典型的就是 <strong>斐波那契数列了，</strong>基本概念就是前面2个数字加起来等于后面一个数；也就(f-1) + (f-2) 递归即可；</p>
-<p>递归方法效率非常低 时间复杂度为2n；可以通过cache来缓存结果，不过次方法提升运算效率；时间复杂度并没有改变</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">test1</span>(<span class="params"><span class="keyword">int</span> n</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sMap.<span class="keyword">get</span>(n) != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> sMap.<span class="keyword">get</span>(n);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">long</span> temp1 = test1(n - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">long</span> temp2 = test1(n - <span class="number">2</span>);</span><br><span class="line">            sMap.put(n, temp1 + temp2);</span><br><span class="line">            Log.printLog(<span class="string">"n "</span> + n + <span class="string">"!  "</span> + temp1 + <span class="string">" "</span> + temp2 + <span class="string">" = "</span> + (temp1 + temp2));</span><br><span class="line">            <span class="keyword">return</span> temp1 + temp2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
-<p>时间复杂度：O(n)</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> long test1(<span class="built_in">int</span> n) &#123;</span><br><span class="line">       <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> n;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> (n == <span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="built_in">int</span> a = <span class="number">0</span>, b = <span class="number">1</span>, <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">           <span class="literal">result</span> = a + b;</span><br><span class="line">           a = b;</span><br><span class="line">           b = <span class="literal">result</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="线性阶O-n"><a href="#线性阶O-n" class="headerlink" title="线性阶O(n)"></a>线性阶O(n)</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (int <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; n; <span class="built_in">i</span>++) &#123;</span><br><span class="line">     j = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的;</p>
-<h3 id="平方阶O（n2）"><a href="#平方阶O（n2）" class="headerlink" title="平方阶O（n2）"></a>平方阶O（n2）</h3><p>典型的冒泡排序</p>
-<p>核心思想就是左边跟右边比对如果左边比右边大的话则交换位置;代码如下</p>
-<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;arr.<span class="built_in">length</span> - <span class="number">1</span>;i ++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;arr.lenth - <span class="number">1</span> -i;j++)&#123;</span><br><span class="line">        <span class="type">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &gt; arr[i + <span class="number">1</span>])&#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i + <span class="number">1</span>] = arr[i];</span><br><span class="line">            arr[i]  = temp</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然上面冒泡排序还有优化空间，比如比较的时候没有发生交换则没必要继续循环下去；可以做个标记跳出循环即可；</p>
-<h3 id="对数阶O-logn"><a href="#对数阶O-logn" class="headerlink" title="对数阶O(logn)"></a>对数阶O(logn)</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int <span class="built_in">i</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">i</span>&lt;n)</span><br><span class="line">&#123;</span><br><span class="line">    i = i * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的代码，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了，直到i不小于n退出。我们试着求解一下，假设循环次数为x，也就是说 2 的 x 次方等于 n，则由2^x=n得出x=log₂n。因此这个代码的时间复杂度为<img src="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948172229-7138e12e-1cc1-4b61-bdf2-31f07c045dac.svg" alt="image"></p>
-<h3 id="线性对数阶O-nlogn"><a href="#线性对数阶O-nlogn" class="headerlink" title="线性对数阶O(nlogn)"></a>线性对数阶O(nlogn)</h3><p>线性对数阶<img src="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948209459-7b3cd504-71ca-470a-aa7a-84078a0c4abf.svg" alt="image">，就是将时间复杂度为对数阶<img src="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948209067-2fb50b44-2e4f-434b-8447-37bec645cdf9.svg" alt="image">的代码循环n遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了<img src="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948209075-3fdf902f-da3e-49a7-84a9-6c9115d57bf7.svg" alt="image">，如下，</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="attribute">m</span>=1; m&lt;n; m++)</span><br><span class="line">&#123;</span><br><span class="line">    i = 1;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;n)</span><br><span class="line">    &#123;</span><br><span class="line">        i = i * 2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>除此之外，其实还有平均情况复杂度、最好时间复杂度、最坏时间复杂度。。。一般没有特殊说明的情况下，都是值最坏时间复杂度。</p>
-
+        
+          <a class="article-more-a" href="/2021/07/23/基础算法总结/#more">more >></a>
+        
       
 
       
@@ -352,7 +339,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3>
+        <p>TODO</p>
+
       
 
       
@@ -426,9 +414,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>### </p>
-<h3 id="TODO"><a href="#TODO" class="headerlink" title="//TODO"></a>//TODO</h3><p>### </p>
-<h3 id="优化方向可以从以下几个方面入手"><a href="#优化方向可以从以下几个方面入手" class="headerlink" title="优化方向可以从以下几个方面入手"></a>优化方向可以从以下几个方面入手</h3><h4 id="（一）启动背景设置"><a href="#（一）启动背景设置" class="headerlink" title="（一）启动背景设置"></a>（一）启动背景设置</h4><ol>
+        <h3 id="优化方向可以从以下几个方面入手"><a href="#优化方向可以从以下几个方面入手" class="headerlink" title="优化方向可以从以下几个方面入手"></a>优化方向可以从以下几个方面入手</h3><h4 id="（一）启动背景设置"><a href="#（一）启动背景设置" class="headerlink" title="（一）启动背景设置"></a>（一）启动背景设置</h4><ol>
 <li>设置 <strong>android:windowlsTranslucent:true</strong> 透明效果</li>
 </ol>
 <h4 id="（二）appliccation-里面初始化对的优化"><a href="#（二）appliccation-里面初始化对的优化" class="headerlink" title="（二）appliccation 里面初始化对的优化"></a>（二）appliccation 里面初始化对的优化</h4><ol>
@@ -437,7 +423,9 @@
 <li>使用 IntentService onHandleIntent () 方法来进行初始化一些比较耗时的操作</li>
 <li>各种debug环境的log Release环境下及时关闭量变引起质变；</li>
 </ol>
-
+        
+          <a class="article-more-a" href="/2021/07/23/Android-性能优化/#more">more >></a>
+        
       
 
       
@@ -780,11 +768,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,11 +792,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">

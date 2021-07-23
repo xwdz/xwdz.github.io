@@ -12,22 +12,22 @@
 <link rel="dns-prefetch" href="http:xwcc.fun">
 <title>基础算法总结 | 跟我回星城</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）；  随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。 指数阶O（2n）典型的就是 斐波那契数列了，基本概念就是前面2个数字加起来等于后面一个数；也就(f-1) + (f-">
+<meta name="description" content="常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）；  随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础算法总结">
 <meta property="og:url" content="http:xwcc.fun/2021/07/23/基础算法总结/index.html">
 <meta property="og:site_name" content="跟我回星城">
-<meta property="og:description" content="常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）；  随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。 指数阶O（2n）典型的就是 斐波那契数列了，基本概念就是前面2个数字加起来等于后面一个数；也就(f-1) + (f-">
+<meta property="og:description" content="常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）；  随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948172229-7138e12e-1cc1-4b61-bdf2-31f07c045dac.svg">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948209459-7b3cd504-71ca-470a-aa7a-84078a0c4abf.svg">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948209067-2fb50b44-2e4f-434b-8447-37bec645cdf9.svg">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948209075-3fdf902f-da3e-49a7-84a9-6c9115d57bf7.svg">
-<meta property="og:updated_time" content="2021-07-23T02:53:49.216Z">
+<meta property="og:updated_time" content="2021-07-23T03:00:26.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础算法总结">
-<meta name="twitter:description" content="常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）；  随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。 指数阶O（2n）典型的就是 斐波那契数列了，基本概念就是前面2个数字加起来等于后面一个数；也就(f-1) + (f-">
+<meta name="twitter:description" content="常见的时间复杂度（小到大依次为） 常数阶O(1); 线性阶O(n)； 对数阶O（log2n）； 平方阶O（n2）； 立方阶O（n3）； K次方阶O（nk）； 指数阶O（2n）；  随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低； ^ 如果是同值取0、异值取1。">
 <meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/svg/2665796/1624948172229-7138e12e-1cc1-4b61-bdf2-31f07c045dac.svg">
 
 <link rel="alternative" href="/atom.xml" title="跟我回星城" type="application/atom+xml">
@@ -200,6 +200,7 @@
 </ol>
 <p>随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低；</p>
 <p>^ 如果是同值取0、异值取1。</p>
+<a id="more"></a>
 <h3 id="指数阶O（2n）"><a href="#指数阶O（2n）" class="headerlink" title="指数阶O（2n）"></a>指数阶O（2n）</h3><p>典型的就是 <strong>斐波那契数列了，</strong>基本概念就是前面2个数字加起来等于后面一个数；也就(f-1) + (f-2) 递归即可；</p>
 <p>递归方法效率非常低 时间复杂度为2n；可以通过cache来缓存结果，不过次方法提升运算效率；时间复杂度并没有改变</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">test1</span>(<span class="params"><span class="keyword">int</span> n</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sMap.<span class="keyword">get</span>(n) != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> sMap.<span class="keyword">get</span>(n);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">long</span> temp1 = test1(n - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">long</span> temp2 = test1(n - <span class="number">2</span>);</span><br><span class="line">            sMap.put(n, temp1 + temp2);</span><br><span class="line">            Log.printLog(<span class="string">"n "</span> + n + <span class="string">"!  "</span> + temp1 + <span class="string">" "</span> + temp2 + <span class="string">" = "</span> + (temp1 + temp2));</span><br><span class="line">            <span class="keyword">return</span> temp1 + temp2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
@@ -483,11 +484,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,11 +508,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
